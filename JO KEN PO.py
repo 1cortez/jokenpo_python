@@ -1,33 +1,29 @@
+#  [DESAFIO] Crie um jogo de JoKenPo (Pedra-Papel-Tesoura)
+
 from random import randint
-itens = ["Pedra","Papel","Tesoura"]
-comput = randint(0,2)
+lista = ["pedra", "papel", "tesoura"]
+pc = randint(0,2)
 
-print(""" Suas opções ->
-      [0] Pedra
-      [1] Papel
-      [2] Tesoura""")
-player = int(input("Insira sua opção -> "))
-print("-=" * 11)
-print(f"Vc escolheu -> {itens[player]}")
-print(f"O PC escolheu -> {itens[comput]}")
-print("-=" * 11)
+print("""JO-KEN-PO
 
-if player == comput:
-    print("EMPATE :(")
+[0] = PEDRA
+[1] = PAPEL
+[2] = TESOURA
+""")
+user = int(input("Insira sua escolha : "))
+
+if user == pc:
+    print(f"O PC escolheu {lista[pc].upper()}")
+    print(f"Você escolheu {lista[user].upper()}")
+    print("===== Empate ======")
+elif (pc == 0 and user == 1) or (pc == 1 and user == 2) or (pc == 2 and user == 0):
+    print(f"O PC escolheu {lista[pc].upper()}")
+    print(f"Você escolheu {lista[user].upper()}")
+    print("Você venceu!")
 else:
-    if player == 0 and comput == 1:
-        print("O PC venceu!")
-    elif player == 1 and comput == 0:
-        print("O player venceu!")
-    if player == 1 and comput == 2:
-        print("O PC venceu!")
-    elif player == 2 and comput == 1:
-        print("O player venceu!")
-    if player == 2 and comput == 0:
-        print("O PC venceu!")
-    elif player == 0 and comput == 2:
-        print("O player venceu!")
+    print(f"O PC escolheu {lista[pc].upper()}")
+    print(f"Você escolheu {lista[user].upper()}")
+    print("O PC venceu!")
 
- 
 
 
